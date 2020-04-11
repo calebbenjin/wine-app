@@ -5,10 +5,12 @@ import Home from './components/pages/HomePage';
 import About from './components/pages/AboutPage';
 import SinglePage from './components/pages/SinglePage';
 import Error from './components/pages/ErrorPage';
+import Navbar from './components/ui/Navbar';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Home />

@@ -172,7 +172,7 @@ Navbar
   text-transform: capitalize;
   display: inline-block;
   font-weight: bold;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 1.2rem;
@@ -184,6 +184,10 @@ Navbar
 }
 .logo {
   width: 12rem;
+  margin-top: 15px;
+}
+.logo span {
+  color: var(--primaryColor)
 }
 /* 
 ====== 
