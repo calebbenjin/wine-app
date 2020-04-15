@@ -198,12 +198,35 @@ About
   width: var(--smallWidth);
   max-width: var(--maxWidth);
   margin: 0 auto;
+  height: 79vh;
 }
 .about-section p {
   line-height: 2rem;
   font-weight: 400;
   letter-spacing: 2px;
 }
+
+/* 
+====== 
+Footer
+======
+*/
+.footer-section {
+  background: var(--mainWhite);
+  height: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid var(--primaryColor);
+  box-shadow: 4px 2px 5px 7px rgba(0, 0, 0, 0.5);
+}
+
+.footer-section .icon {
+  font-size: 1.5rem;
+}
+
 /* 
 ====== 
 Error
@@ -212,6 +235,7 @@ Error
 .error-page {
   display: flex;
   justify-content: center;
+  height: 80vh;
 }
 .error-container {
   text-align: center;
@@ -353,4 +377,5 @@ Cocktail
     padding-top: 0;
   }
 }
+
 
