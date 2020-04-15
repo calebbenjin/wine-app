@@ -9,9 +9,9 @@ const HomePage = () => {
 
   // fetching data from an API 
   useEffect(() => {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita').then((response) => response.json())
-    .then(data => console.log(data))
-  }, [])
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`).then((response) => response.json())
+    .then(data => setProducts(data.drinks));
+  }, [searchTerm])
   return (
     <main>
       <SearchForm setSearchTerm={setSearchTerm} />
