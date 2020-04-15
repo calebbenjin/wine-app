@@ -9,9 +9,30 @@ const HomePage = () => {
 
   // fetching data from an API 
   useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`).then((response) => response.json())
-    .then(data => setProducts(data.drinks));
-  }, [searchTerm])
+    setLoading(true);
+    async function getDrinks() {
+      try {
+        const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`);
+        const data = await res.json();
+        const {drinks} = data;
+        if(drinks) {
+          const newProducts = drinks.map((item) => {
+            const {idDrinks,strDrink,strDrinkThumb, strAlcholic, strGlass} = item;
+            return {id:idDrinks, name:strDrink,image:strDrinkThumb, info:strAlcholic, glass:strGlass}
+          });
+
+          setProducts(newProducts);
+        } else {
+          setProducts([]);
+        }
+      } catch (error) {
+        console.log(error)
+      }
+
+      setLoading(false);
+    }
+    getDrinks();
+  }, [searchTerm]);
   return (
     <main>
       <SearchForm setSearchTerm={setSearchTerm} />
