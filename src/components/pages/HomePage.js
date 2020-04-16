@@ -4,7 +4,7 @@ import ProductList from '../ui/ProductList';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('a');
+  const [searchTerm, setSearchTerm] = useState('ab');
   const [products, setProducts] = useState([]);
 
   // fetching data from an API 
@@ -17,8 +17,8 @@ const HomePage = () => {
         const {drinks} = data;
         if(drinks) {
           const newProducts = drinks.map((item) => {
-            const {idDrinks,strDrink,strDrinkThumb, strAlcholic, strGlass} = item;
-            return {id:idDrinks, name:strDrink,image:strDrinkThumb, info:strAlcholic, glass:strGlass}
+            const {idDrinks,strDrink,strDrinkThumb, strAlcoholic, strGlass} = item;
+            return {id:idDrinks, name:strDrink,image:strDrinkThumb, info:strAlcoholic, glass:strGlass}
           });
 
           setProducts(newProducts);

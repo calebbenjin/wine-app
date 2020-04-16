@@ -7,7 +7,7 @@ import SinglePage from './components/pages/SinglePage';
 import Error from './components/pages/ErrorPage';
 // import Navbar
 import Navbar from './components/ui/Navbar';
-import Footer from './components/ui/Footer'
+// import Footer from './components/ui/Footer'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           <Error />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
