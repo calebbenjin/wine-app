@@ -10,7 +10,7 @@ export const SinglePage = () => {
     setLoading(true);
     async function getDetails() {
       try {
-        const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`);
+        const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
         const data = await res.json();
         if (data.drinks) {
           const { strDrink:name, strAlcoholic:info, strDrinkThumb:image, strCategory: category, strGlass:glass, strInstructions:instructions, strIngredient1, strIngredient2, strIngredient3, strIngredient4 } = data.drinks[0];

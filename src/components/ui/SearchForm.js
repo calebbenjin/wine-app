@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchForm = ({ setSearchTerm }) => {
 
-  React.useEffect(()=> {
+  React.useEffect(() => {
     searchValue.current.focus();
   })
   const searchValue = React.useRef("");
@@ -24,7 +24,6 @@ const SearchForm = ({ setSearchTerm }) => {
           <input type="text" name="name" id="name" onChange={searchWine} ref={searchValue} />
         </div>
       </form>
-
     </section>
   )
 }
